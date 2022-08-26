@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "genero")
+@Table(name = "generos")
 @Getter
 @Setter
 
@@ -15,9 +15,9 @@ public class GeneroEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-
     private Long id;
 
+    @Column(name = "Nombre", nullable = false)
     private String nombre;
 
     private String imagen;

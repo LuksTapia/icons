@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "personaje")
+@Table(name = "personajes")
 @Getter
 @Setter
 
@@ -23,10 +23,13 @@ public class PersonajeEntity {
 
     private String imagen;
 
+    @Column(name = "Nombre", nullable = false)
     private String nombre;
 
+    @Column(name = "Edad", nullable = false)
     private int edad;
 
+    @Column(name = "Peso",nullable = false)
     private float peso;
 
     private String historia;

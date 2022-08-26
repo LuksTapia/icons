@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 @Entity
-@Table(name = "pelicula")
+@Table(name = "peliculas")
 @Getter
 @Setter
 
@@ -19,17 +19,18 @@ public class PeliculaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-
     private Long id;
 
+    @Column(name = "Imagen", nullable = false)
     private String imagen;
-
+    @Column(name = "Título", nullable = false)
     private String titulo;
 
     @Column(name = "fecha_creacion")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate fechaCreacion;
 
+    @Column(name = "Calificación", nullable = false, length = 1)
     private int calificacion; // 1 a 5
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
