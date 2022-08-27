@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -21,6 +22,11 @@ public class GeneroEntity {
     private String nombre;
 
     private String imagen;
+
+    @OneToMany(mappedBy = "genero", cascade = CascadeType.ALL)
+    private List<PeliculaEntity> peliculas;
+
+
 
 
 

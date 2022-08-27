@@ -33,7 +33,7 @@ public class PeliculaEntity {
     @Column(name = "Calificación", nullable = false, length = 1)
     private int calificacion; // 1 a 5
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "genero_id", insertable = false, updatable = false)
     private GeneroEntity genero;
 
