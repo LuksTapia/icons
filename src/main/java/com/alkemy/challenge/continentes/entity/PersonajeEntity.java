@@ -1,4 +1,4 @@
-package com.alkemy.icons.icons.entity;
+package com.alkemy.challenge.continentes.entity;
 
 
 import lombok.Getter;

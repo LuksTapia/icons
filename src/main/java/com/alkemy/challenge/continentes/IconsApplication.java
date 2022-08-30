@@ -1,4 +1,4 @@
-package com.alkemy.icons.icons;
+package com.alkemy.challenge.continentes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

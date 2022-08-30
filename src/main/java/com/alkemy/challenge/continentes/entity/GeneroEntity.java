@@ -1,4 +1,4 @@
-package com.alkemy.icons.icons.entity;
+package com.alkemy.challenge.continentes.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +25,8 @@ public class GeneroEntity {
 
     @OneToMany(mappedBy = "genero", cascade = CascadeType.ALL)
     private List<PeliculaEntity> peliculas;
+
+
 
 
 
