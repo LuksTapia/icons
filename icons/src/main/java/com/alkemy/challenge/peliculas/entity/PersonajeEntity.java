@@ -1,8 +1,9 @@
 package com.alkemy.challenge.peliculas.entity;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,8 +12,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "personajes")
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@SQLDelete(sql = "UPDATE icon SET deleted = true WHERE id=?")
+@Where(clause = "deleted = false")
 
 public class PersonajeEntity {
 
@@ -34,6 +38,8 @@ public class PersonajeEntity {
 
     private String historia;
 
+    private boolean delete = Boolean.FALSE;
+
     @ManyToMany(mappedBy = "personajes")
     private List<PeliculaEntity> peliculas = new ArrayList<>();
 
@@ -43,6 +49,8 @@ public class PersonajeEntity {
     public void removePelicula(PeliculaEntity pelicula) {
         this.peliculas.remove(pelicula);
     }
+
+
 
 
 

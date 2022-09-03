@@ -1,7 +1,8 @@
 package com.alkemy.challenge.peliculas.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,8 +10,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "generos")
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@SQLDelete(sql = "UPDATE icon SET deleted = true WHERE id=?")
+@Where(clause = "deleted = false")
 
 public class GeneroEntity {
 
@@ -26,6 +30,7 @@ public class GeneroEntity {
     @OneToMany(mappedBy = "genero", cascade = CascadeType.ALL)
     private List<PeliculaEntity> peliculas;
 
+    private boolean delete = Boolean.FALSE;
 
 
 
